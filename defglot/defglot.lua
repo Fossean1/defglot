@@ -69,8 +69,8 @@ function M.autofit_text(node, set_scale)
 		set_scale = 1
 	end
 	local text_metrics = gui.get_text_metrics_from_node(node)
-	local scale = math.min(1, gui.get_size(node).x / text_metrics.width)*set_scale
-	gui.set_scale(node, vmath.vector3(scale, scale, scale))
+	local scale = gui.get_size(node).x * gui.get_scale(node).x / text_metrics.width * set_scale
+	gui.set_scale(node, vmath.vector3(scale))
 end
 
 
